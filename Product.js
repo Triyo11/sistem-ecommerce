@@ -17,7 +17,7 @@ export default class Product {
 
   updateProduct(newProductName, newPrice, newDescription) {
     this.productName = newProductName ? newProductName : this.productName
-    this.price = newPrice ? formatCurrency(newPrice) : formatCurrency(this.price)
+    this.price = newPrice ? newPrice : this.price
     this.description = newDescription ? newDescription : this.description
     console.log("Product updated successfully.")
   }
