@@ -6,21 +6,21 @@ export default class Cart {
 
   addToCart(product, quantity) {
     this.items.push({product, quantity})
-    console.log(`Added ${quantity} ${product.productName}(s) to the cart.`)
+    console.log(`\nAdded ${quantity} ${product.productName}(s) to the cart.`)
   }
 
   removeFromCart(product) {
     const index = this.items.findIndex(item => item.product === product)
     if(index >= 0) {
       this.items.splice(index, 1)
-      console.log(`Removed ${product.productName} from the cart.`)
+      console.log(`\nRemoved ${product.productName} from the cart.`)
     } else {
-      console.log(`${product.productName} not found in the cart.`)
+      console.log(`\n${product.productName} not found in the cart.`)
     }
   }
 
   viewCart() {
-    console.log(`Cart ID: ${this.cartId}`)
+    console.log(`\nCart ID: ${this.cartId}`)
     console.log("Cart Items: ")
     this.items.forEach(item => {
       console.log(`${item.product.productName} - Quantity: ${item.quantity}`)
