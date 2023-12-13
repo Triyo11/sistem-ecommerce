@@ -9,7 +9,7 @@ export default class Product {
   }
 
   displayProduct() {
-    console.log(`Product ID: ${this.productId}`)
+    console.log(`\nProduct ID: ${this.productId}`)
     console.log(`Product Name: ${this.productName}`)
     console.log(`Price: ${formatCurrency(this.price)}`)
     console.log(`Description: ${this.description}`)
@@ -19,6 +19,6 @@ export default class Product {
     this.productName = newProductName ? newProductName : this.productName
     this.price = newPrice ? newPrice : this.price
     this.description = newDescription ? newDescription : this.description
-    console.log("Product updated successfully.")
+    console.log("\nProduct updated successfully.")
   }
 }
