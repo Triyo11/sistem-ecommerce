@@ -1,3 +1,5 @@
+import { formatCurrency } from "./helper.js"
+
 export default class Product {
   constructor(productId, productName, price, description) {
     this.productId = productId
@@ -9,13 +11,13 @@ export default class Product {
   displayProduct() {
     console.log(`Product ID: ${this.productId}`)
     console.log(`Product Name: ${this.productName}`)
-    console.log(`Price: ${this.price}`)
+    console.log(`Price: ${formatCurrency(this.price)}`)
     console.log(`Description: ${this.description}`)
   }
 
   updateProduct(newProductName, newPrice, newDescription) {
     this.productName = newProductName ? newProductName : this.productName
-    this.price = newPrice ? newPrice : this.price
+    this.price = newPrice ? formatCurrency(newPrice) : formatCurrency(this.price)
     this.description = newDescription ? newDescription : this.description
     console.log("Product updated successfully.")
   }
