@@ -6,17 +6,17 @@ export default class Category {
   }
 
   displayCategory() {
-    console.log(`Category ID: ${this.categoryId}`)
+    console.log(`\nCategory ID: ${this.categoryId}`)
     console.log(`Category Name: ${this.categoryName}`)
   }
 
   updateCategory(newCategoryName) {
     this.categoryName = newCategoryName ? newCategoryName : this.categoryName
-    console.log("Category update successfully.")
+    console.log("\nCategory update successfully.")
   }
 
   products() {
-    console.log(`Products in category "${this.categoryName}":\n`)
+    console.log(`\nProducts in category "${this.categoryName}":\n`)
     this.listProducts.forEach(product => product.displayProduct())
   }
 }
