@@ -1,3 +1,5 @@
+import { formatCurrency } from "./helper.js"
+
 export default class Cart {
   constructor(cartId) {
     this.cartId = cartId
@@ -25,9 +27,7 @@ export default class Cart {
     this.items.forEach(item => {
       console.log(`${item.product.productName} - Quantity: ${item.quantity}`)
     })
-    const totalAmount = this.items.reduce((totalPrice, itemPrice) => {
-      totalPrice += itemPrice.product.price * itemPrice.quantity, 0
-    })
-    console.log(`Total amount: Rp ${totalAmount}`)
+    const totalAmount = this.items.reduce((totalPrice, itemPrice) => totalPrice + itemPrice.product.price * itemPrice.quantity, 0)
+    console.log(`Total amount: Rp ${formatCurrency(totalAmount)}`)
   }
 }
